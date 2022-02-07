@@ -33,6 +33,12 @@
     </nav>
 
     <div class="container">
+       <!-- Mensagem de erro aparecendo na tela -->
+        {{#if messages.message}}
+        <div class="message">
+            {{messages.message}}
+        </div>
+        {{/if}}
 
         {{{ body }}}
 
@@ -53,7 +59,6 @@
                     <li title="Me siga no github"><a href="https://github.com/JeanFagundes"> <i class="bi bi-github"></i> </a>
                     </li>
                     <li title="Me siga no linkedin"><a href="https://www.linkedin.com/in/jean-fagundes-31488910b/"> <i class="bi bi-linkedin"></i></a>
-                    
                     </li>
                 </ul>
 

@@ -19,6 +19,7 @@ const User = require ('./models/User')
 
 //impotar rotas
 const bankRoutes = require('./routes/bankRoutes')
+const authRoutes = require('./routes/authRoutes')
 
 //importar controles
 const BankController = require ('./controllers/BankController')
@@ -66,6 +67,7 @@ app.use((req,res,next)=>{
 
 // routes
 app.use('/bancos', bankRoutes)
+app.use('/',authRoutes )
 
 app.get('/', BankController.showBanks)
 
