@@ -1,0 +1,27 @@
+<div class="auth-container">
+    <h2>Abra sua conta conosco</h2>
+    <form action="/register" method="POST">
+    <div class="form-control">
+
+        <label for="agencia">Agencia:</label>
+        <select name="agencia" required>
+            <option value="agencia Faria Lima">Agencia Faria Lima</option>
+            <option value="agencia Grajau">Agencia Grajau</option>
+            <option value="agencia Paulista">Agencia Paulista</option>
+        </select>
+    </div>
+
+    <div class="form-control">
+        <label for="nome">Conta:</label>
+        <input type="text" name="name" placeholder="Digite o seu nome" required>
+    </div>
+
+    <div class="form-control">
+        <label for="email">endereço:</label>
+        <input type="email" name="email" placeholder="Digite o seu email" required>
+    </div>
+
+    <input type="submit" value="next">
+    <p>Já tem conta ? <a href="/login">Clique aqui!</a></p>
+    </form>
+</div>

@@ -133,6 +133,12 @@
     border: 1px solid #f6982d;
 }
 
+.form-control select{
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid #f6982d;
+}
+
 form input[type='submit'],
 .btn {
     background-color: transparent;

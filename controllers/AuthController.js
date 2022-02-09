@@ -18,6 +18,11 @@ module.exports = class AuthController {
             res.render('auth/register')
 
             return
+        } else {
+            res.render('auth/register2')
+
+            const {agencia} = req.body
+            console.log(agencia)
         }
     }
 }
