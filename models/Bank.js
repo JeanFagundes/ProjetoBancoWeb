@@ -6,7 +6,7 @@ const db = require ('../db/conn')
 const User = require('./User')
 
 const Bank = db.define('Bank', {
-    title: {
+    tipodeconta: {
         type: DataTypes.STRING,
         allowNull: false,
         require: true,

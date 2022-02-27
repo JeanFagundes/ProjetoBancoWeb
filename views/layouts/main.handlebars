@@ -24,7 +24,13 @@
             <!-- <li><a href="/register">Abra sua conta</a></li>-->
 
             <!-- Adicionar outros links quando logado (alterar senha, configurações, encerrar conta e etc) -->
-        </ul>
+        </ul>  
+
+        {{#if session.userid}}
+         <p>autenticado nessa porra</p>
+         {{else}}
+         <p>nao ta autenticado nesse caralho</p>
+        {{/if}}
 
         <div id="abra-sua-conta">
             <a href="/register">Abra sua conta</a>
