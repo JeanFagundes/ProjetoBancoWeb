@@ -2,7 +2,6 @@ const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const validarcpf = require('cpf-cnpj-validator')
 const buscadorcep = require('buscadorcep')
-const Address = require('../models/Address')
 
 module.exports = class AuthController {
     static login(req, res) {
@@ -56,53 +55,33 @@ module.exports = class AuthController {
             password : hashedPassword,
         }
         
-        //verificando se será criado aqui o usuario na base de dados
+        //colocando o usuario criado em um objeto para passar o id para a sessão
 
-           const createdUser = await User.create(user)
-           req.session.userid = createdUser.id
+        try {
 
-           req.flash('message', 'Adicione o endereço a sua conta!')  
-
-             //pegando o ultimo ID do BD e adicionando +1 para usar como chave estrangeira na criação do endereço.
-             /*const lastid = await User.findOne({
-                order: [ [ 'createdAt', 'DESC' ]],
-            });
-            var userid = lastid.id + 1
-            console.log('last id', userid) */
+            const createdUser = await User.create(user)
+            req.session.userid = createdUser.id
             
-            //ainda validando se devo salvar sessão aqui
+            req.flash('message', 'Adicione o endereço a sua conta!')  
+            
             req.session.save(() => {
-
-                res.redirect('registerAddress')
-
+                
+                res.redirect('/registerAddress')               
             }) 
 
-          //  res.render('auth/registerAddress', {user , userid})
+        }catch(err) {
+            req.flash('message' , 'Não foi possivel criar o usuario' + err)
+        }
 
+        //verificando se será criado aqui o usuario na base de dados
+
+        //pegando o ultimo ID do BD e adicionando +1 para usar como chave estrangeira na criação do endereço.
+        /*const lastid = await User.findOne({
+           order: [ [ 'createdAt', 'DESC' ]],
+       });
+       var userid = lastid.id + 1
+       console.log('last id', userid) */
+       
+       //ainda validando se devo salvar sessão aqui
     }
-
-    static registerAddress (req,res){
-        res.render('auth/registerAddress')
-    }
-
-    static async registerAddressPost (req,res ){
-
-            const {endereco, numero, cep, cidade, estado} = req.body
-
-            const address = {
-                endereco,
-                numero,
-                cep,
-                cidade,
-                estado,
-                UserId : req.session.userid,
-            }
-
-            const createdAddress = await Address.create(address)
-
-            res.redirect('/')
-
-
-    }
-
 }

@@ -23,7 +23,12 @@ const Bank = db.define('Bank', {
     },
 })
 
-Bank.belongsTo(User)
+Bank.belongsTo(User, {
+    foreignKey: {
+        allowNull:false,
+        require:true
+    }
+})
 User.hasMany(Bank)
 
 module.exports = Bank
