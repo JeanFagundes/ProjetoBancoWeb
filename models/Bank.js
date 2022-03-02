@@ -26,7 +26,7 @@ const Bank = db.define('Bank', {
 Bank.belongsTo(User, {
     foreignKey: {
         allowNull:false,
-        require:true
+        require:true,
     }
 })
 User.hasMany(Bank)

@@ -2,9 +2,9 @@ const express = require ('express')
 const router = express.Router()
 const BankController = require ('../controllers/BankController')
 
-//router.get('/', BankController.showBanks)
+router.get('/', BankController.showBanks)
 
 router.get('/registerAgencia', BankController.registerAgencia)
-router.get('/registerAgencia', BankController.registerAgenciaPost)
+router.post('/registerAgencia', BankController.registerAgenciaPost)
 
 module.exports = router

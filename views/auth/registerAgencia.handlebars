@@ -1,31 +1,25 @@
 <div class="auth-container">
     <h2>Dados da conta Bancaria</h2>
 
-    <form action="/registerBanco" method="POST">
+    <form action="/registerAgencia" method="POST">
 
         <div class="form-control">
             <label for="tipodeconta">Escolha sua conta:</label>
             <select name="tipodeconta" required>
-                <option value="contaCorrente">Conta corrente</option>
-                <option value="contaPoupanca">Conta poupanca</option>
+                <option value="Conta Corrente">Conta corrente</option>
+                <option value="Conta Poupanca">Conta poupanca</option>
             </select>
         </div>
 
         <div class="form-control">
             <label for="agencia">Agencia:</label>
             <select name="agencia" required>
-                <option value="agencia Faria Lima">Agencia Faria Lima</option>
-                <option value="agencia Grajau">Agencia Grajau</option>
-                <option value="agencia Paulista">Agencia Paulista</option>
+                <option value="0001">Agencia Faria Lima - 0001</option>
+                <option value="0002">Agencia Grajau - 0002</option>
+                <option value="0003">Agencia Paulista - 0003</option>
             </select>
         </div>
-
-        {{!
-        <label for="conta">Conta:</label>
-        <input type="text" name="conta" placeholder="Digite o seu nome" required>
-</div>
-<div class="form-control">
-    }}
-    <input type="submit" value="Cadastrar">
+        
+        <input type="submit" value="Cadastrar">
     </form>
 </div>
