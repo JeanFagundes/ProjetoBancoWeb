@@ -1,1 +1,42 @@
-<h1>pagina inicial</h1>
+{{#if session.userid }}
+<h2>home</h2>
+
+<div class="main-container">
+
+    <div class="menu-container">
+         <ul class="menu">
+             <li class="menu-item"> <a href="/contaCorrente">Conta Corrente</a> </li>
+             <li class="menu-item"> <a href="/contaPoupanca">Conta Poupanca</a></li>
+             <li class="menu-item"><a href="/investimentos">Investimento</a></li>
+             <li class="menu-item"><a href="/emprestimo">Emprestimo</a></li>
+         </ul>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{else}}
+
+<h2>nem tao home assim</h2>
+{{/if}}

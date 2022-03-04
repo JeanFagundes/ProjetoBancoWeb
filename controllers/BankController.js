@@ -38,16 +38,16 @@ module.exports = class BankController {
             const checkIfContaExist = await Bank.findOne({
                 where: {
                     UserId: userid,
-                    tipodeconta: tipodeconta,   
-                 }
-     
-            })
-     
-            if (checkIfContaExist) {      
+                    tipodeconta: tipodeconta,
+                }
 
-                req.flash('message', `Você ja tem uma ${tipodeconta}`)    
+            })
+
+            if (checkIfContaExist) {
+
+                req.flash('message', `Você ja tem uma ${tipodeconta}`)
                 res.render('auth/registerAgencia')
-     
+
                 return
             }
         } catch (error) {
@@ -56,12 +56,11 @@ module.exports = class BankController {
 
 
         try {
-            const createdAgencia = await Bank.create(dadosBancarios)  
+            const createdAgencia = await Bank.create(dadosBancarios)
             req.session.userid = userid
 
             req.session.save(() => {
-                console.log('Salvando antes da hora')
-               // res.redirect('/')
+                res.redirect('/')
             })
 
         } catch (error) {
@@ -70,7 +69,18 @@ module.exports = class BankController {
 
         }
     }
+
+    static async contaCorrente(req, res) {
+        res.render('auth/contaCorrente')
+
+    }
+    static async contaCorrentePost(req, res) {
+
+    
+
+    }
 }
+
 
 function getRandom() {
     let max = 89999

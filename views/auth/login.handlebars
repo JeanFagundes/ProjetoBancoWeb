@@ -1,1 +1,22 @@
-<h1>login</h1>
+<div class="auth-container">
+
+    <h2>Entre em sua conta</h2>
+    <form action="/login" method="POST">
+        <div class="form-control">
+            <label for="username">Usuario:</label>
+            <input type="text" name="username" placeholder="Digite o seu CPF" required>
+        </div>
+
+        <div class="form-control">
+            <label for="password">Senha:</label>
+            <input type="password" name="password" placeholder="Digite a sua Senha" required>
+        </div>
+
+        <input type="submit" value="Logar">
+
+
+        <p>Ainda não tem uma conta ? <a href="/register">Clique aqui!</a></p>
+
+    </form>
+
+</div>

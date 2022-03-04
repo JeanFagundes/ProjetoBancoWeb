@@ -21,26 +21,30 @@
             <li><a href="/">Pagina inicial</a></li>
             <li><a href="/faq">Tire suas dúvidas</a></li>
             <li><a href="/login">Entrar em sua conta</a></li>
-            <!-- <li><a href="/register">Abra sua conta</a></li>-->
-
             <!-- Adicionar outros links quando logado (alterar senha, configurações, encerrar conta e etc) -->
-        </ul>  
+        </ul>
+
+        <div>
+            <ul></ul>
+        </div>
 
         {{#if session.userid}}
-         <p><a href="/logout">Sair da sessão</a></p>
-         {{else}}
-         <p>nao ta autenticado nesse caralho</p>
-        {{/if}}
+        <div id="abra-sua-conta">
+            <p><a href="/logout">Sair</a></p>
+            {{! Adicionar agencia e conta no header}}
+        </div>
+        {{else}}
 
         <div id="abra-sua-conta">
             <a href="/register">Abra sua conta</a>
         </div>
+        {{/if}}
 
     </nav>
 
     <div class="container">
-        
-       <!-- Mensagem de erro aparecendo na tela -->
+
+        <!-- Mensagem de erro aparecendo na tela -->
         {{#if messages.message}}
         <div class="message">
             {{messages.message}}
@@ -59,13 +63,17 @@
             <div id="redes-sociais">
                 <span id="msg-de-seguir">Siga o Dev</span>
                 <ul>
-                    <li title="Me siga no facebook"> <a href="https://www.facebook.com/Jean.Fagundes.96/"> <i class="bi bi-facebook"></i> </a>
+                    <li title="Me siga no facebook"> <a href="https://www.facebook.com/Jean.Fagundes.96/"> <i
+                                class="bi bi-facebook"></i> </a>
                     </li>
-                    <li  title="Me siga no instagram">  <a href="https://www.instagram.com/jeanfagundes96/"> <i class="bi bi-instagram"></i> </a>
+                    <li title="Me siga no instagram"> <a href="https://www.instagram.com/jeanfagundes96/"> <i
+                                class="bi bi-instagram"></i> </a>
                     </li>
-                    <li title="Me siga no github"><a href="https://github.com/JeanFagundes"> <i class="bi bi-github"></i> </a>
+                    <li title="Me siga no github"><a href="https://github.com/JeanFagundes"> <i
+                                class="bi bi-github"></i> </a>
                     </li>
-                    <li title="Me siga no linkedin"><a href="https://www.linkedin.com/in/jean-fagundes-31488910b/"> <i class="bi bi-linkedin"></i></a>
+                    <li title="Me siga no linkedin"><a href="https://www.linkedin.com/in/jean-fagundes-31488910b/"> <i
+                                class="bi bi-linkedin"></i></a>
                     </li>
                 </ul>
 

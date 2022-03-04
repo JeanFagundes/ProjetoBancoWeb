@@ -34,11 +34,7 @@ module.exports = class AddressController {
         try {
             const createdAddress = await Address.create(address)
 
-
             res.redirect('/registerAgencia')
-
-            /* req.session.save(() => {
-            })*/
             
         } catch (error) {
             console.log('Não foi possivel fazer a criação do endereço, tente novamente' + error)
