@@ -1,0 +1,40 @@
+<div class="auth-container">
+    <h2>Conta Poupanca {{id}}</h2>
+
+    <form action="/contaPoupanca/{{id}}" method="GET">
+
+        <div>
+            <input type="submit" class="btn" name="depositar" value="depositar">
+
+            <input type="submit" class="btn" name="sacar" value="sacar">
+
+            <input type="submit" class="btn" name="saldo" value="saldo">
+        </div>
+    </form>
+
+    {{#if depositar}}
+    <form action="/contaPoupanca" method="POST">
+        <div class="form-control" id="btn1">
+            <label for="deposit">Qual valor deseja depositar ?</label>
+            <input type="hidden" name="id" value="{{id}}">
+            <input type="text" name="deposit" placeholder="Insira o valor que deseja depositar">
+            <input type="submit" class="btn" value="Depositar">
+        </div>
+    </form>
+    {{else if sacar}}
+    <form action="/contaPoupanca" method="POST">
+        <div class="form-control">
+            <label for="withdraw">Qual valor deseja sacar ?</label>
+            <input type="hidden" name="id" value="{{id}}">
+            <input type="text" name="withdraw" placeholder="Insira o valor que deseja sacar">
+            <input type="submit" class="btn" value="Sacar">
+        </div>
+    </form>
+    {{else if saldo}}
+    <form action="/contaPoupanca" method="GET">
+        <div class="form-control">
+            <h2>O seu saldo é de R${{saldo}}</h2>
+        </div>
+    </form>
+    {{/if}}
+</div>

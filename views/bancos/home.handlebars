@@ -1,42 +1,22 @@
 {{#if session.userid }}
-<h2>home</h2>
 
-<div class="main-container">
 
-    <div class="menu-container">
-         <ul class="menu">
-             <li class="menu-item"> <a href="/contaCorrente">Conta Corrente</a> </li>
-             <li class="menu-item"> <a href="/contaPoupanca">Conta Poupanca</a></li>
-             <li class="menu-item"><a href="/investimentos">Investimento</a></li>
-             <li class="menu-item"><a href="/emprestimo">Emprestimo</a></li>
-         </ul>
-    </div>
+<div class="auth-container">
+    <h2>Pagina inicial</h2>
 
+    <nav id="navbar">
+        <ul class="menu">
+            <li class="menu-item"> <a href="/contaCorrente/{{idCorrente}}">Conta Corrente</a></li>
+            <li class="menu-item"> <a href="/contaPoupanca/{{idPoupanca}}">Conta Poupanca</a></li>
+            {{!<li class="menu-item"><a href="/investimentos">Investimento</a></li>
+            <li class="menu-item"><a href="/emprestimo">Emprestimo</a></li>}}
+        </ul>
+    </nav>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{else}}
-
-<h2>nem tao home assim</h2>
+    {{else}}
+    <div class="auth-container">
+    <h2>Paginal inicial</h2>
+    <h3>Entra em sua conta por <a href="/login">aqui</a></h3>
+    <h3>Ainda não tem uma conta ? se <a href="/register">inscreva</a> </h3>
+    </div>
 {{/if}}

@@ -21,6 +21,16 @@ const Bank = db.define('Bank', {
         allowNull: false,
         require: true,
     },
+    contacorrente: {
+        type: DataTypes.DECIMAL(10,2),
+        allowNull: false,
+        defaultValue: 0,
+    },
+    contapoupanca: {
+        type: DataTypes.DECIMAL(10,2),
+        allowNull: false,
+        defaultValue: 0,
+    },
 })
 
 Bank.belongsTo(User, {
